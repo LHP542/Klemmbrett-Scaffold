@@ -20,7 +20,7 @@
     <PackageVersion Include="NLog" Version="6.1.4" />
 
     <!-- DPAPI-Wrapper für Inline-Secret-Verschlüsselung (nur Windows aktiv) -->
-    <PackageVersion Include="System.Security.Cryptography.ProtectedData" Version="10.0.0" />
+    <PackageVersion Include="System.Security.Cryptography.ProtectedData" Version="10.0.10" />
 
     <!-- Versionierung -->
     <PackageVersion Include="MinVer" Version="7.0.0" />
