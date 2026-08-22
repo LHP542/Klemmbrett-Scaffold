@@ -16,6 +16,11 @@
             <TextBlock Text="Zwischenablage-Verlauf für Text und Bilder."
                        TextWrapping="Wrap" Foreground="#CCCCCC" />
 
+            <StackPanel Spacing="1" Margin="0,6,0,0">
+                <TextBlock Text="Arbeitsgruppe" Foreground="#888888" FontSize="11" />
+                <TextBlock Text="5424 IT-Basis-Dienste" FontWeight="SemiBold" />
+            </StackPanel>
+
             <TextBlock x:Name="UpdateStatus" Foreground="{DynamicResource KrosteGoldBrush}"
                        TextWrapping="Wrap" Margin="0,6,0,0" IsVisible="False" />
 

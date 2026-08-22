@@ -22,7 +22,7 @@ namespace Klemmbrett.Services;
 public sealed class UpdateService
 {
     private static readonly Logger Log = LogManager.GetCurrentClassLogger();
-    private const string ReleasesUrl = "https://api.github.com/repos/Kroste/Klemmbrett-Scaffold/releases/latest";
+    private const string ReleasesUrl = "https://api.github.com/repos/LHP542/Klemmbrett-Scaffold/releases/latest";
 
     private readonly HttpClient _http;
     private UpdateCheckResult? _cached;

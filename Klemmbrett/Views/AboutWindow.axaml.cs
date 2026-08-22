@@ -12,7 +12,7 @@ namespace Klemmbrett.Views;
 public partial class AboutWindow : ChromeWindow
 {
     private static readonly Logger Log = LogManager.GetCurrentClassLogger();
-    private const string GithubUrl = "https://github.com/Kroste/Klemmbrett-Scaffold";
+    private const string GithubUrl = "https://github.com/LHP542/Klemmbrett-Scaffold";
     private const string BmcUrl = "https://buymeacoffee.com/kroste";
 
     private readonly UpdateService? _updateService;
