@@ -43,10 +43,23 @@ public class CommentTests : IDisposable
     [Fact]
     public void OldIndex_WithoutCommentField_LoadsWithNullComment()
     {
-        // Simuliert eine vor der Kommentar-Funktion geschriebene history.json
+        // Simuliert eine vor der Kommentar-Funktion geschriebene history.json.
+        //
+        // Der Zeitstempel MUSS relativ zu heute sein. HistoryStorageService.Load
+        // wirft ungepinnte Eintraege weg, die aelter als
+        // HistoryDayFilter.RetentionDays (30) sind — ein festes Datum im
+        // Testtext macht daraus eine Zeitbombe, die ohne jede Codeaenderung rot
+        // wird, sobald genug Zeit vergangen ist. Genau das ist hier passiert:
+        // mit dem urspruenglichen 2026-07-23 lief der Test bis zum 30. Tag
+        // gruen und danach auf "Sequence contains no elements" — der Eintrag
+        // war schlicht abgelaufen, nicht kaputt gelesen.
+        //
+        // Geprueft werden soll die SCHEMA-Vertraeglichkeit (fehlendes
+        // Comment-Feld), nicht die Aufbewahrungsfrist.
         Directory.CreateDirectory(_dir);
+        var gestern = DateTimeOffset.Now.AddDays(-1).ToString("o");
         File.WriteAllText(Path.Combine(_dir, "history.json"),
-            """[{"Type":"text","CapturedAt":"2026-07-23T10:00:00+00:00","Text":"alt","Hash":null,"Pinned":false}]""");
+            $$"""[{"Type":"text","CapturedAt":"{{gestern}}","Text":"alt","Hash":null,"Pinned":false}]""");
 
         var loaded = new HistoryStorageService(_dir, new TestProtector()).Load();
 
