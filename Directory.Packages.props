@@ -3,8 +3,8 @@
        Versionen mit CHECK-Kommentar beim Projektstart gegen NuGet prüfen! -->
   <ItemGroup>
     <!-- Avalonia — CHECK: neueste stabile 12.x -->
-    <PackageVersion Include="Avalonia" Version="12.1.1" />
-    <PackageVersion Include="Avalonia.Desktop" Version="12.1.1" />
+    <PackageVersion Include="Avalonia" Version="12.1.2" />
+    <PackageVersion Include="Avalonia.Desktop" Version="12.1.2" />
     <PackageVersion Include="Avalonia.Themes.Fluent" Version="12.1.1" />
     <PackageVersion Include="Avalonia.Fonts.Inter" Version="12.1.1" />
     <!-- Nur Debug-Builds referenzieren dieses Paket (DevTools) -->
