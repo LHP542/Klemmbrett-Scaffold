@@ -23,7 +23,7 @@
     <PackageVersion Include="System.Security.Cryptography.ProtectedData" Version="10.0.11" />
 
     <!-- Versionierung -->
-    <PackageVersion Include="MinVer" Version="7.0.0" />
+    <PackageVersion Include="MinVer" Version="8.0.0" />
 
     <!-- Tests — CHECK (xunit); FluentAssertions NICHT auf 8.x heben (Xceed-Lizenz) -->
     <PackageVersion Include="xunit.v3" Version="4.0.0" />
