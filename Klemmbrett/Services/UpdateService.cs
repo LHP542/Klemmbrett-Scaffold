@@ -15,14 +15,17 @@ using NLog;
 namespace Klemmbrett.Services;
 
 /// <summary>
-/// Update-Check und Self-Update gegen GitHub Releases (Kroste-Standard, siehe
+/// Update-Check und Self-Update gegen die Releases der eigenen Forge (Kroste-Standard, siehe
 /// autoupdate-Referenz): proxy-aware, nicht blockierend, max. 1 Check pro
 /// App-Start, nie silent installieren. Download + Austausch mit Nutzer-Zustimmung.
 /// </summary>
 public sealed class UpdateService
 {
     private static readonly Logger Log = LogManager.GetCurrentClassLogger();
-    private const string ReleasesUrl = "https://api.github.com/repos/LHP542/Klemmbrett-Scaffold/releases/latest";
+    // **Die eigene Forge statt GitHub** (Lars am 28.10.2026: GitHub wird
+    // abgeschaltet). Fuer die Dienstrechner zweitrangig -- sie laden nichts
+    // aus dem Internet und holen ihre Updates aus dem Samba-Share.
+    private const string ReleasesUrl = "https://git.flexfamily.de/api/v1/repos/LHP542/Klemmbrett-Scaffold/releases/latest";
 
     private readonly HttpClient _http;
     private UpdateCheckResult? _cached;
